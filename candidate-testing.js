@@ -11,13 +11,10 @@ let candidateAnswer ="";
 let questions=['1.Who was the first American woman in space?','2.True or false: 5 kilometer == 5000 meters?','3.(5 + 3)/2 * 10 = ?',"4.Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?",'5.What is the minimum crew size for the ISS?'];
 let correctAnswers =["Sally Ride","true","40","Trajectory","3"];
 let candidateAnswers=[];
-//let gradeQuiz;
-
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName =input.question("Enter the Candidate Name: ");
-
 }
 
 function askQuestion() {
@@ -27,8 +24,8 @@ function askQuestion() {
     candidateAnswer =input.question(questions[i]);
     candidateAnswers.push(candidateAnswer);
   }
-  //console.log(candidateAnswers);
 }
+
 function gradeQuiz(candidateAnswers) {
  let score=0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -37,8 +34,8 @@ for(let i=0;i<correctAnswers.length;i++)
 if (candidateAnswers[i].toUpperCase()===correctAnswers[i].toUpperCase())
 {
   score++;
-  //console.log("Correct Answer");
 } 
+//console.log("candidate Name:" +candidateName);  
 console.log();
 console.log(questions[i]);
 console.log("Your Answer is " ,candidateAnswers[i]);
@@ -49,7 +46,7 @@ console.log("Correct Answer is ",correctAnswers[i]);
   console.log(`>>> Overall Grade:${grade}% (${score} of ${questions.length}  responses correct) <<<`);
   if (grade>=80)
   {
-    console.log(">>> Status: PASS <<<");
+    console.log(">>> Status: PASSED <<<");
   }else
   {
    console.log(">>> Status: FAILED <<<");
@@ -62,7 +59,8 @@ console.log("Correct Answer is ",correctAnswers[i]);
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-console.log("Hello "+candidateName);  
+  console.log("candidate Name:" +candidateName);  
+  console.log();
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
