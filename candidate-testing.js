@@ -43,6 +43,7 @@ console.log("Correct Answer is ",correctAnswers[i]);
 }
  let grade;
   grade= (score/questions.length )* 100;
+  console.log();
   console.log(`>>> Overall Grade:${grade}% (${score} of ${questions.length}  responses correct) <<<`);
   if (grade>=80)
   {
